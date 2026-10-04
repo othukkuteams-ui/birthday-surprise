@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday · Asshii</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blush: #e8b4b8;
+    --rose: #c97b84;
+    --deep-rose: #9a4f5a;
+    --pearl: #faf4f2;
+    --ink: #3a2a2c;
+    --soft-ink: #6b5558;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #6e1f28;
+    font-family: "Outfit", sans-serif;
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: 45;
+    pointer-events: none;
+    opacity: 0.22;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #6e1f28;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(18px) saturate(0.9);
+    transform: scale(1.08);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.design {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    z-index: 2;
+    animation: birthdayAppear 1.6s ease-out;
+}
+
+.flower {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    object-fit: contain;
+    object-position: center;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.flower-left {
+    clip-path: ellipse(10% 15% at 14% 17%);
+    animation: gentleLeft 5.5s ease-in-out infinite;
+}
+
+.flower-right {
+    clip-path: ellipse(12% 17% at 86% 82%);
+    animation: gentleRight 6s ease-in-out infinite;
+}
+
+.flower-letter-left {
+    clip-path: ellipse(8% 14% at 36% 62%);
+    animation: letterFlowerLeft 5.8s ease-in-out infinite;
+}
+
+.flower-letter-right {
+    clip-path: ellipse(8% 14% at 64% 62%);
+    animation: letterFlowerRight 6.2s ease-in-out infinite;
+}
+
+.flower-letter-left-bottom {
+    clip-path: ellipse(7% 11% at 34% 72%);
+    animation: letterFlowerLeftBottom 6.4s ease-in-out infinite;
+}
+
+.flower-letter-right-bottom {
+    clip-path: ellipse(7% 11% at 66% 72%);
+    animation: letterFlowerRightBottom 6.6s ease-in-out infinite;
+}
+
+@keyframes gentleLeft {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.45deg); }
+    85% { transform: rotate(-0.45deg); }
+}
+
+@keyframes gentleRight {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-0.4deg); }
+    85% { transform: rotate(0.4deg); }
+}
+
+@keyframes letterFlowerLeft {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.35deg); }
+    85% { transform: rotate(-0.35deg); }
+}
+
+@keyframes letterFlowerRight {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-0.35deg); }
+    85% { transform: rotate(0.35deg); }
+}
+
+@keyframes letterFlowerLeftBottom {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.3deg); }
+    85% { transform: rotate(-0.3deg); }
+}
+
+@keyframes letterFlowerRightBottom {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-0.3deg); }
+    85% { transform: rotate(0.3deg); }
+}
+
+@keyframes birthdayAppear {
+    from { opacity: 0; transform: scale(1.04); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.back-button {
+    position: fixed;
+    top: 22px;
+    left: 22px;
+    z-index: 50;
+    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    background: rgba(250, 244, 242, 0.18);
+    color: var(--pearl);
+    font-family: "Outfit", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(250, 244, 242, 0.32);
+    transform: translateX(-2px);
+}
+
+.letter-button {
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 30%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.bright-clip {
+    position: absolute;
+    left: 20.5%;
+    top: 55%;
+    z-index: 12;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%) rotate(-8deg);
+    pointer-events: none;
+    animation: brightClipFloat 6.5s ease-in-out infinite;
+}
+
+.bright-clip video {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: min(360px, 24vw);
+    max-height: 40vh;
+    object-fit: contain;
+    object-position: center;
+    background: transparent;
+    border-radius: 2px;
+    box-shadow:
+        0 0 0 6px lab(35.34% 58.81 43.46 / 0.751),
+        0 0 0 7px rgba(44, 3, 179, 0.18),
+        0 14px 28px rgba(26, 18, 20, 0.38);
+    filter: saturate(1.04) contrast(1.03);
+}
+
+@keyframes brightClipFloat {
+    0%, 100% { margin-top: 0; }
+    50% { margin-top: -6px; }
+}
+
+.actions {
+    position: absolute;
+    left: 50%;
+    top: 68%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: min(280px, 80vw);
+}
+
+.open-letter-btn,
+.memories-btn {
+    width: 100%;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 999px;
+    font-family: "Outfit", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.open-letter-btn {
+    background: var(--pearl);
+    color: var(--deep-rose);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.open-letter-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32);
+}
+
+.memories-btn {
+    background: rgba(250, 244, 242, 0.14);
+    color: var(--pearl);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    transition: none;
+    animation: none;
+    transform: none;
+}
+
+.memories-btn:hover,
+.memories-btn:focus,
+.memories-btn:active {
+    background: rgba(250, 244, 242, 0.14);
+    color: var(--pearl);
+    transform: none;
+    box-shadow: none;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(42, 24, 28, 0.72);
+    backdrop-filter: blur(12px);
+}
+
+.overlay.show {
+    display: flex;
+}
+
+.message-box {
+    position: relative;
+    width: min(560px, 92vw);
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 52px 40px 44px;
+    background:
+        linear-gradient(160deg, #fffaf8 0%, #f7ebe8 100%);
+    color: var(--ink);
+    border-radius: 4px;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(201, 123, 132, 0.15);
+    animation: gentleLetterPopup 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.message-box::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 2px;
+    background: var(--blush);
+    border-radius: 2px;
+}
+
+@keyframes gentleLetterPopup {
+    0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.94);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.message-box h1 {
+    text-align: center;
+    color: var(--deep-rose);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.4rem, 6vw, 3.2rem);
+    font-weight: 500;
+    margin: 12px 0 28px;
+    letter-spacing: -0.01em;
+}
+
+.message-box p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    color: var(--soft-ink);
+}
+
+.signature {
+    text-align: right;
+    color: var(--deep-rose);
+    font-family: "Allura", cursive;
+    font-size: 2.1rem;
+    margin-top: 1.6rem;
+}
+
+.close-button {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    color: var(--rose);
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.close-button:hover {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .back-button {
+        top: max(12px, env(safe-area-inset-top));
+        left: max(12px, env(safe-area-inset-left));
+        padding: 8px 14px;
+        font-size: 0.65rem;
+    }
+
+    .actions {
+        top: auto;
+        bottom: max(28px, env(safe-area-inset-bottom));
+        transform: translate(-50%, 0);
+        width: min(280px, 86vw);
+        gap: 10px;
+    }
+
+    .open-letter-btn,
+    .memories-btn {
+        padding: 12px 18px;
+        font-size: 0.65rem;
+    }
+
+    .open-letter-btn:hover {
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    .memories-btn:hover {
+        transform: none;
+        background: rgba(250, 244, 242, 0.14);
+    }
+
+    .letter-button {
+        width: 55%;
+        height: 28%;
+    }
+
+    .bright-clip {
+        left: 24%;
+        top: 49%;
+        transform: translate(-50%, -50%) rotate(-6deg);
+    }
+
+    .bright-clip video {
+        max-width: min(140px, 34vw);
+        max-height: 24vh;
+    }
+
+    .message-box {
+        padding: 44px 26px 36px;
+        max-height: min(85vh, 85dvh);
+    }
+
+    .message-box h1 {
+        font-size: clamp(2rem, 8vw, 2.6rem);
+    }
+
+    .message-box p {
+        font-size: 1.05rem;
+    }
+
+    .design,
+    .flower {
+        object-position: center top;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="page">
+
+    <img src="bithday.png" class="background" alt="">
+    <img src="bithday.png" class="design" alt="Happy Birthday">
+
+    <img src="bithday.png" class="flower flower-left" alt="">
+    <img src="bithday.png" class="flower flower-right" alt="">
+    <img src="bithday.png" class="flower flower-letter-left" alt="">
+    <img src="bithday.png" class="flower flower-letter-right" alt="">
+    <img src="bithday.png" class="flower flower-letter-left-bottom" alt="">
+    <img src="bithday.png" class="flower flower-letter-right-bottom" alt="">
+
+    <div class="bright-clip" aria-hidden="true">
+        <video
+            id="memoryClip"
+            src="template.mp4"
+            muted
+            loop
+            autoplay
+            playsinline
+            preload="auto"
+            disablepictureinpicture>
+        </video>
+    </div>
+
+    <button class="back-button" onclick="goBack()">← Back</button>
+
+    <button class="letter-button" onclick="openMessage()" aria-label="Open Letter"></button>
+
+    <div class="actions">
+        <button class="open-letter-btn" onclick="openMessage()">Open Letter</button>
+        <a href="photobooth.html" class="memories-btn">Blah Blah</a>
+    </div>
+
+</div>
+
+<div class="overlay" id="messageOverlay" onclick="closeOutside(event)">
+    <div class="message-box">
+        <button class="close-button" onclick="closeMessage()" aria-label="Close">×</button>
+
+        <h1>Dear Asshii</h1>
+
+        <p>
+            Happy Birthday to someone who makes ordinary
+            moments feel a little more beautiful.
+        </p>
+
+        <p>
+            I hope your birthday is filled with happiness,
+            laughter, soft memories, and everything
+            your heart wishes for.
+        </p>
+
+        <p>
+            You deserve countless reasons to smile and a
+            year filled with wonderful moments.
+        </p>
+        <p>
+            I don't know what place I'll have in your life,
+             but I do know that I'm grateful I met you. 
+             I just didn't want to leave these feelings unsaid.
+             Thank you for being such a beautiful part of
+            my life.
+        </p>
+
+    
+
+        <p>
+            I hope this little surprise makes you smile today.
+        </p>
+
+        <div class="signature">With lots of love</div>
+    </div>
+</div>
+
+<script>
+function openMessage() {
+    document.getElementById("messageOverlay").classList.add("show");
+}
+
+function closeMessage() {
+    document.getElementById("messageOverlay").classList.remove("show");
+}
+
+function closeOutside(event) {
+    if (event.target === document.getElementById("messageOverlay")) {
+        closeMessage();
+    }
+}
+
+function goBack() {
+    window.location.href = "index.html";
+}
+
+function playClip() {
+    const clip = document.getElementById("memoryClip");
+    if (!clip) return;
+    clip.muted = true;
+    clip.loop = true;
+    clip.play().catch(function() {});
+}
+
+playClip();
+document.addEventListener("pointerdown", playClip, { once: true });
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") closeMessage();
+});
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday · Asshii</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blush: #e8b4b8;
+    --rose: #c97b84;
+    --deep-rose: #9a4f5a;
+    --pearl: #faf4f2;
+    --ink: #3a2a2c;
+    --soft-ink: #6b5558;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #6e1f28;
+    font-family: "Outfit", sans-serif;
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: 45;
+    pointer-events: none;
+    opacity: 0.22;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #6e1f28;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(18px) saturate(0.9);
+    transform: scale(1.08);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.design {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    z-index: 2;
+    animation: birthdayAppear 1.6s ease-out;
+}
+
+.flower {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    object-fit: contain;
+    object-position: center;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.flower-left {
+    clip-path: ellipse(10% 15% at 14% 17%);
+    animation: gentleLeft 5.5s ease-in-out infinite;
+}
+
+.flower-right {
+    clip-path: ellipse(12% 17% at 86% 82%);
+    animation: gentleRight 6s ease-in-out infinite;
+}
+
+.flower-letter-left {
+    clip-path: ellipse(8% 14% at 36% 62%);
+    animation: letterFlowerLeft 5.8s ease-in-out infinite;
+}
+
+.flower-letter-right {
+    clip-path: ellipse(8% 14% at 64% 62%);
+    animation: letterFlowerRight 6.2s ease-in-out infinite;
+}
+
+.flower-letter-left-bottom {
+    clip-path: ellipse(7% 11% at 34% 72%);
+    animation: letterFlowerLeftBottom 6.4s ease-in-out infinite;
+}
+
+.flower-letter-right-bottom {
+    clip-path: ellipse(7% 11% at 66% 72%);
+    animation: letterFlowerRightBottom 6.6s ease-in-out infinite;
+}
+
+@keyframes gentleLeft {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.45deg); }
+    85% { transform: rotate(-0.45deg); }
+}
+
+@keyframes gentleRight {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-0.4deg); }
+    85% { transform: rotate(0.4deg); }
+}
+
+@keyframes letterFlowerLeft {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.35deg); }
+    85% { transform: rotate(-0.35deg); }
+}
+
+@keyframes letterFlowerRight {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-0.35deg); }
+    85% { transform: rotate(0.35deg); }
+}
+
+@keyframes letterFlowerLeftBottom {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.3deg); }
+    85% { transform: rotate(-0.3deg); }
+}
+
+@keyframes letterFlowerRightBottom {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-0.3deg); }
+    85% { transform: rotate(0.3deg); }
+}
+
+@keyframes birthdayAppear {
+    from { opacity: 0; transform: scale(1.04); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.back-button {
+    position: fixed;
+    top: 22px;
+    left: 22px;
+    z-index: 50;
+    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    background: rgba(250, 244, 242, 0.18);
+    color: var(--pearl);
+    font-family: "Outfit", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(250, 244, 242, 0.32);
+    transform: translateX(-2px);
+}
+
+.letter-button {
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 30%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.actions {
+    position: absolute;
+    left: 50%;
+    top: 68%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: min(280px, 80vw);
+}
+
+.open-letter-btn,
+.memories-btn {
+    width: 100%;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 999px;
+    font-family: "Outfit", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+.open-letter-btn {
+    background: var(--pearl);
+    color: #0d0103;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.open-letter-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32);
+}
+
+.memories-btn {
+    background: var(--pearl);
+    color: #0d0103;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.memories-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background: rgba(50, 18, 24, 0.62);
+    backdrop-filter: blur(14px);
+}
+
+.overlay.show { display: flex; }
+
+.message-box {
+    position: relative;
+    width: min(590px, 94vw);
+    max-height: 86vh;
+    overflow-y: auto;
+    padding: 58px 52px 46px;
+    background: radial-gradient(circle at 50% 0%, rgba(232,180,184,.30), transparent 34%), linear-gradient(145deg,#fffdfb 0%,#f9eeeb 52%,#f4e3e1 100%);
+    color: var(--ink);
+    border: 1px solid rgba(201,123,132,.28);
+    border-radius: 24px;
+    box-shadow: 0 28px 70px rgba(40,15,20,.38),0 8px 24px rgba(154,79,90,.16),inset 0 1px 0 rgba(255,255,255,.9);
+    animation: gentleLetterPopup .65s cubic-bezier(.22,1,.36,1);
+}
+
+.message-box::after {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    border: 1px solid rgba(201,123,132,.20);
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.message-box::before {
+    content: "♡";
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--rose);
+    font-family: "Cormorant Garamond",serif;
+    font-size: 1.35rem;
+    line-height: 1;
+}
+
+@keyframes gentleLetterPopup {
+    0% { opacity:0; transform:translateY(22px) scale(.96); }
+    100% { opacity:1; transform:translateY(0) scale(1); }
+}
+
+.message-box h1 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--deep-rose);
+    font-family: "Allura",cursive;
+    font-size: clamp(3rem,8vw,4rem);
+    font-weight: 400;
+    line-height: 1;
+    margin: 4px 0 30px;
+}
+
+.message-box p {
+    position: relative;
+    z-index: 1;
+    font-family: "Cormorant Garamond",serif;
+    font-size: clamp(1.18rem,2.5vw,1.34rem);
+    line-height: 1.75;
+    margin: 0 auto 1.25rem;
+    max-width: 500px;
+    color: #0d0103;
+}
+
+.message-box p:first-of-type {
+    text-align: center;
+    font-style: italic;
+    color: var(--deep-rose);
+    font-size: clamp(1.25rem,2.7vw,1.42rem);
+    margin-bottom: 1.5rem;
+}
+
+.signature {
+    position: relative;
+    z-index: 1;
+    text-align: right;
+    color: var(--deep-rose);
+    font-family: "Allura",cursive;
+    font-size: 2.35rem;
+    margin-top: 1.8rem;
+}
+
+.close-button {
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    right: 21px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(154,79,90,.18);
+    border-radius: 50%;
+    background: rgba(255,255,255,.55);
+    color: var(--deep-rose);
+    font-size: 1.45rem;
+    line-height: 30px;
+    cursor: pointer;
+    opacity: .78;
+    transition: all .25s ease;
+}
+
+.close-button:hover { opacity:1; background:rgba(232,180,184,.25); transform:rotate(8deg) scale(1.06); }
+
+@media (max-width: 600px) {
+    .back-button {
+        top: max(12px, env(safe-area-inset-top));
+        left: max(12px, env(safe-area-inset-left));
+        padding: 8px 14px;
+        font-size: 0.65rem;
+    }
+
+    .actions {
+        top: auto;
+        bottom: max(28px, env(safe-area-inset-bottom));
+        transform: translate(-50%, 0);
+        width: min(280px, 86vw);
+        gap: 10px;
+    }
+
+    .open-letter-btn,
+    .memories-btn {
+        padding: 12px 18px;
+        font-size: 0.65rem;
+    }
+
+    .open-letter-btn:hover,
+    .memories-btn:hover {
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    .letter-button {
+        width: 55%;
+        height: 28%;
+    }
+
+    .message-box {
+        width: min(94vw, 560px);
+        padding: 52px 28px 38px;
+        max-height: min(86vh, 86dvh);
+        border-radius: 20px;
+    }
+    .message-box::after { inset: 10px; border-radius: 13px; }
+    .message-box h1 { font-size: clamp(2.8rem, 13vw, 3.5rem); margin-bottom: 25px; }
+    .message-box p { font-size: 1.16rem; line-height: 1.7; margin-bottom: 1.05rem; }
+    .message-box p:first-of-type { font-size: 1.2rem; }
+    .signature { font-size: 2.1rem; margin-top: 1.5rem; }
+    .close-button { top: 16px; right: 17px; }
+
+    .design,
+    .flower {
+        object-position: center top;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="page">
+
+    <img src="bithday.png" class="background" alt="">
+    <img src="bithday.png" class="design" alt="Happy Birthday">
+
+    <img src="bithday.png" class="flower flower-left" alt="">
+    <img src="bithday.png" class="flower flower-right" alt="">
+    <img src="bithday.png" class="flower flower-letter-left" alt="">
+    <img src="bithday.png" class="flower flower-letter-right" alt="">
+    <img src="bithday.png" class="flower flower-letter-left-bottom" alt="">
+    <img src="bithday.png" class="flower flower-letter-right-bottom" alt="">
+
+    <button class="back-button" onclick="goBack()">← Back</button>
+
+    <button class="letter-button" onclick="openMessage()" aria-label="Open Letter"></button>
+
+    <div class="actions">
+        <button class="open-letter-btn" onclick="openMessage()">Open Letter</button>
+        <a href="photobooth.html" class="memories-btn">Our Memories</a>
+    </div>
+
+</div>
+
+<div class="overlay" id="messageOverlay" onclick="closeOutside(event)">
+    <div class="message-box">
+        <button class="close-button" onclick="closeMessage()" aria-label="Close">×</button>
+
+        <h1>Dear Asshii</h1>
+
+        <p>
+            Happy Birthday to someone who makes ordinary
+            moments feel a little more beautiful.
+        </p>
+
+        <p>
+            I hope your birthday is filled with happiness,
+            laughter, soft memories, and everything
+            your heart wishes for.
+        </p>
+
+        <p>
+            You deserve countless reasons to smile and a
+            year filled with wonderful moments.
+        </p>
+        <p>
+            I don't know what place I'll have in your life,
+             but I do know that I'm grateful I met you. 
+             I just didn't want to leave these feelings unsaid.
+             Thank you for being such a beautiful part of
+            my life.
+        </p>
+
+    
+
+        <p>
+            I hope this little surprise makes you smile today.
+        </p>
+
+        <div class="signature">With lots of love</div>
+    </div>
+</div>
+
+<script>
+function openMessage() {
+    document.getElementById("messageOverlay").classList.add("show");
+}
+
+function closeMessage() {
+    document.getElementById("messageOverlay").classList.remove("show");
+}
+
+function closeOutside(event) {
+    if (event.target === document.getElementById("messageOverlay")) {
+        closeMessage();
+    }
+}
+
+function goBack() {
+    window.location.href = "index.html";
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") closeMessage();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,570 @@
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    color: white;
+
+    overflow-x: hidden;
+
+    background: #14001f;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.surprise-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(156, 39, 176, 0.8),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(233, 30, 99, 0.7),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #14001f,
+            #32002f,
+            #160020
+        );
+}
+
+
+/* =========================
+   GLOW
+========================= */
+
+.surprise-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: #ff4081;
+
+    filter: blur(150px);
+
+    opacity: 0.2;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.surprise-card {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(700px, 95%);
+
+    padding: 65px 40px;
+
+    border-radius: 40px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(25px);
+
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow:
+
+        0 30px 100px
+        rgba(0, 0, 0, 0.45),
+
+        inset 0 0 40px
+        rgba(255, 255, 255, 0.03);
+
+    animation:
+        cardAppear 1.3s ease;
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+
+    font-size: 85px;
+
+    margin-bottom: 20px;
+
+    display: inline-block;
+
+    animation:
+        cakeBounce 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   SMALL TEXT
+========================= */
+
+.small-text {
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    opacity: 0.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   MAIN TITLE
+========================= */
+
+.surprise-card h1 {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size:
+        clamp(70px, 13vw, 115px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #ff9ecb;
+
+    text-shadow:
+
+        0 0 10px
+        rgba(255, 120, 190, 0.5),
+
+        0 0 35px
+        rgba(255, 80, 170, 0.35);
+
+    animation:
+        titleGlow 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+.surprise-card h2 {
+
+    font-size: 38px;
+
+    font-weight: 500;
+
+    margin-top: 20px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+
+    max-width: 550px;
+
+    margin: 0 auto;
+}
+
+
+.message p {
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    margin: 20px 0;
+
+    color:
+        rgba(255, 255, 255, 0.9);
+}
+
+
+.message .special {
+
+    color: #ff9ecb;
+
+    font-weight: 600;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   BIG HEART
+========================= */
+
+.big-heart {
+
+    font-size: 85px;
+
+    margin: 35px 0 20px;
+
+    display: inline-block;
+
+    animation:
+        heartbeat 1.5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(255, 50, 120, 0.5)
+        );
+}
+
+
+/* =========================
+   BOTTOM MESSAGE
+========================= */
+
+.bottom-message {
+
+    color: #ffb6d7;
+
+    font-size: 16px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 12px 28px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.25);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.back-btn:hover {
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(255, 80, 150, 0.2);
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts span {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    font-size: 22px;
+
+    opacity: 0.6;
+
+    animation:
+        floatingHeart 9s linear infinite;
+}
+
+
+.hearts span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+
+.hearts span:nth-child(2) {
+    left: 18%;
+    animation-delay: 2s;
+}
+
+
+.hearts span:nth-child(3) {
+    left: 32%;
+    animation-delay: 4s;
+}
+
+
+.hearts span:nth-child(4) {
+    left: 47%;
+    animation-delay: 1s;
+}
+
+
+.hearts span:nth-child(5) {
+    left: 62%;
+    animation-delay: 3s;
+}
+
+
+.hearts span:nth-child(6) {
+    left: 76%;
+    animation-delay: 5s;
+}
+
+
+.hearts span:nth-child(7) {
+    left: 88%;
+    animation-delay: 7s;
+}
+
+
+.hearts span:nth-child(8) {
+    left: 95%;
+    animation-delay: 4s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(60px)
+            scale(0.9);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes cakeBounce {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-15px)
+            rotate(3deg);
+    }
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+    }
+
+    50% {
+
+        transform: scale(1.25);
+    }
+}
+
+
+@keyframes titleGlow {
+
+    0%,
+    100% {
+
+        text-shadow:
+            0 0 10px
+            rgba(255, 120, 190, 0.5);
+    }
+
+    50% {
+
+        text-shadow:
+            0 0 40px
+            rgba(255, 120, 190, 0.9);
+    }
+}
+
+
+@keyframes floatingHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+
+        opacity: 0.7;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .surprise-page {
+
+        padding: 25px 15px;
+    }
+
+
+    .surprise-card {
+
+        padding: 50px 22px;
+
+        border-radius: 30px;
+    }
+
+
+    .cake {
+
+        font-size: 65px;
+    }
+
+
+    .surprise-card h1 {
+
+        font-size: 68px;
+    }
+
+
+    .surprise-card h2 {
+
+        font-size: 29px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .message p {
+
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+
+    .big-heart {
+
+        font-size: 70px;
+    }
+
+}
+```
